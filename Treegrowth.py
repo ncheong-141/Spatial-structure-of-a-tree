@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Programme: Tree growth 
+Program: Tree growth 
 
 Objective:  - Time marching a tree growing for visualization. 
             - Trunk forms parabolically
             - Branches form as linear, parabolic, cubic to quadic(?)
             - Later stages maybe implement a neural network for functions. 
-            
-            Memory considerations:
-                - Try use efficient data types, i.e. integers for non floating point numbers
-                - Try use 1D arrays as much as possible as they take 16% less memory than 2D. Any Collumn/row vector use 1D. 
+           
 """
 
 print('\n\n\nInitialize libraries...\n')
@@ -289,7 +286,3 @@ ax  = plt.figure(1).add_subplot(111, projection='3d');
 ax.plot_wireframe(Sk[0,0:-1,ko-2], Sk[1,0:-1,ko-2], Sk[2,0:-1,ko-2].reshape(1,-1))
 plt.draw
 """
-bla = polycall_vx_y.y_p0
-bla1 = polycall_vx_y.y_p1
-bla2 = polycall_vx_y.y_p2
-blaCp = Cp[:,:,ko]
