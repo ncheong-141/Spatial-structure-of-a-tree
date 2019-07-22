@@ -16,10 +16,6 @@ from numpy.linalg import inv
 # Define library of functions
 
 def polycall_vy_x(ko,Cp,Sk,DV):      
-    
-    # I really hope this doesnt save! Doesnt! VICTORY 
-    # Will probably need an expression to change k = for different branches? 
-    # Or just use them all as ko? 
     k = ko 
     
     # Allocate memory for working matrices 
@@ -60,11 +56,7 @@ def polycall_vy_x(ko,Cp,Sk,DV):
 
     # Solving system of equations. Rm = CM*Pcf
 
-    """
-    Can parralelize this
-    """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
     Pcf = inv(CM)@Rm
     
     # Interpolate between control points to plot poly's
@@ -101,9 +93,6 @@ def polycall_vy_x(ko,Cp,Sk,DV):
 
 def polycall_vz_x(ko,Cp,Sk,DV):       
     
-    # I really hope this doesnt save! Doesnt! VICTORY 
-    # Will probably need an expression to change k = for different branches? 
-    # Or just use them all as ko? 
     k = ko 
     
     # Allocate memory for working matrices 
@@ -148,7 +137,6 @@ def polycall_vz_x(ko,Cp,Sk,DV):
     Can parralelize this
     """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
     Pcf = inv(CM)@Rm
     
     # Interpolate between control points to plot poly's
@@ -223,13 +211,7 @@ def polycall_vx_z(Cp,k,Sk,DV):
                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2*Cp[2,3,k], 3*Cp[2,3,k]**2]],dtype = np.float64)
 
     # Solving system of equations. Rm = CM*Pcf
-
-    """
-    Can parralelize this
-    """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
-    # Pcf[:,k:k+1] = inv(CM)@Rm
     Pcf = inv(CM)@Rm
       
     # Interpolate between control points to plot poly's
@@ -305,12 +287,7 @@ def polycall_vy_z(Cp,k,Sk,DV):
 
     # Solving system of equations. Rm = CM*Pcf
 
-    """
-    Can parralelize this
-    """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
-    # Pcf[:,k:k+1] = inv(CM)@Rm
     Pcf = inv(CM)@Rm
       
     # Interpolate between control points to plot poly's
@@ -393,13 +370,7 @@ def polycall_vx_y(ko,Cp,Sk,DV):
                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2*Cp[1,3,k], 3*Cp[1,3,k]**2]],dtype = np.float64)
 
     # Solving system of equations. Rm = CM*Pcf
-
-    """
-    Can parralelize this
-    """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
-
     Pcf = inv(CM)@Rm
     
     # Interpolate between control points to plot poly's
@@ -484,12 +455,7 @@ def polycall_vz_y(ko,Cp,Sk,DV):
                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2*Cp[1,3,k], 3*Cp[1,3,k]**2]],dtype = np.float64)
 
     # Solving system of equations. Rm = CM*Pcf
-
-    """
-    Can parralelize this
-    """
     # Pcf[:,k] = inv(CM)@Rm.flatten() # Flatten for converting [12,1] to [12,]
-    # Alternativelt for working in [12,1]. 
     Pcf = inv(CM)@Rm
     
     # Interpolate between control points to plot poly's
