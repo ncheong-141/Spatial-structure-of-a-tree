@@ -291,29 +291,3 @@ for i in range (0,ko):
         ax.plot_wireframe(Sk[0,0:-1,i], Sk[1,0:-1,i], Sk[2,0:-1,i].reshape(1,-1),color='tab:brown', linewidth = 3)
         ax.scatter3D(Sk[0,0,i], Sk[1,0,i], Sk[2,0,i].reshape(1,-1))
     plt.draw
-
-"""
-ax  = plt.figure(1).add_subplot(111, projection='3d');   
-ax.plot_wireframe(Sk[0,0:-1,ko-2], Sk[1,0:-1,ko-2], Sk[2,0:-1,ko-2].reshape(1,-1))
-plt.draw
-"""
-
-"""
-bla = polycall_vx_y.y_p0
-bla1 = polycall_vx_y.y_p1
-bla2 = polycall_vx_y.y_p2
-blaCp = Cp[:,:,ko]
-"""
-
-"""
-# Make trunk straight line
-Cp[0,:,k] = np.array([0,0,0,0],dtype = np.float64)   # Initial trunk y position
-Cp[1,:,k] = np.array([0,0,0,0],dtype = np.float64)   # Initial trunk y position
-Cp[2,:,k] = np.array([0,round(CV.Th_v*1/4,1),                             round(CV.Th_v*3/4,1),                             CV.Th_v])  # Initial trunk z position
-z_p0 = np.arange(Cp[2,0,k],  Cp[2,1,k]                                    ,  (1/DV.Pn)*(Cp[2,1,k]- Cp[2,0,k]))
-z_p1 = np.arange(Cp[2,1,k],  Cp[2,2,k]                                    ,  (1/DV.Pn)*(Cp[2,2,k]- Cp[2,1,k]))
-z_p2 = np.arange(Cp[2,2,k],  Cp[2,3,k] + (1/(2*DV.Pn))*(Cp[2,3,k]- Cp[2,2,k]),  (1/DV.Pn)*(Cp[2,3,k]- Cp[2,2,k]))
-        
-# Parse data from function onto tree spatial matrix
-Sk[2,:,k] = np.concatenate([z_p0, z_p1, z_p2])  # z data
-"""
